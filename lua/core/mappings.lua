@@ -1,11 +1,18 @@
+local g = vim.g
 local map = vim.keymap.set
+g.mapleader = [[ ]]
 --[[----------------------------------------------------------------------------
 														Plugin Mappings
 --------------------------------------------------------------------------------
 ]]-- Telescope
 -- Prompt
 map('n', '<leader>ts', ':Telescope<CR>')
-map('n', '<leader>ff', ':Telescope<CR>')
+-- Find files
+map('n', '<leader>ff', ':Telescope find_files<CR>')
+-- Buffer picker
+map('n', '<leader>fb', ':Telescope buffers<CR>')
+-- Help files
+map('n', '<leader>fh', ':Telescope help_tags<CR>')
 
 --[[----------------------------------------------------------------------------
 														 File Explorer
