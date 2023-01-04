@@ -4,6 +4,7 @@ local merge_tb = vim.tbl_deep_extend
 M.load_config = function()
 	local config = require('core.default_config')
 	return config
+end
 
 
 M.merge_plugins = function(plugins)
@@ -15,6 +16,7 @@ end
 
 M.load_override = function(options_table, name)
 	local plugin_configs, plugin_options = M.load_config().plugins, nil
+end
 
 
 return M

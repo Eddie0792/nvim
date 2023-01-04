@@ -1,4 +1,4 @@
-Local M = {}
+local M = {}
 
 M.options = {}
 

@@ -2,6 +2,7 @@ local g = vim.g
 local opt = vim.opt
 -- o.guicursor="n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
+opt.colorcolumn = '80'
 opt.termguicolors = true
 opt.number = true
 opt.shiftwidth = 2
