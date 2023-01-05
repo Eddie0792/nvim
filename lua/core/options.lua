@@ -13,6 +13,10 @@ opt.undofile = true
 opt.clipboard = 'unnamedplus'
 opt.mouse = 'a'
 
+-- Disabling netrw while i test nvimtree
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Blankline stuffs
 vim.opt.list = true
 
@@ -43,6 +47,7 @@ opt.numberwidth = 2
 opt.ruler = false
 
 -- not too sure
+-- End of buffer?
 opt.fillchars = { eob = " " }
 
 -- Statusline
@@ -59,15 +64,9 @@ opt.smartindent = true
 
 -- Explorer
 -- :h netrw-browser-var
-g.netrw_winsize = 15
-g.netrw_liststyle = 3 -- Tree style directory
-g.netrw_browse_split = 4
-g.netrw_liststyle = 3
-g.netrw_banner = 0
-
---[[ Use Tab
-If this variable exists and is non-zero, then the <tab> map supporting
-shrinking/expanding a Lexplore or netrw window will be enabled.
-(see :h netrw-c-tab)
---]]
-g.netrw_usetab = 1
+--g.netrw_winsize = 15
+--g.netrw_liststyle = 3 -- Tree style directory
+--g.netrw_browse_split = 4
+--g.netrw_liststyle = 3
+--g.netrw_banner = 0
+--g.netrw_usetab = 1 -- bind ctrl-tab to collapse netrw

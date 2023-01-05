@@ -17,6 +17,8 @@ end, bufopts)
 map("n", "<leader>ts", ":Telescope<CR>")
 -- Find files
 map("n", "<leader>ff", ":Telescope find_files<CR>")
+-- File Browser
+map("n", "<leader>fd", ":Telescope file_browser<CR>")
 -- Buffer picker
 map("n", "<leader>fb", ":Telescope buffers<CR>")
 -- Help files
@@ -26,7 +28,7 @@ map("n", "<leader>fh", ":Telescope help_tags<CR>")
 -------------------------------------------------------------------------------
 ]]
 -- Toggle
-map("n", "<C-n>", [[:Lexplore<CR>]])
+map("n", "<C-n>", [[:NvimTreeToggle<CR>]])
 
 --[[----------------------------------------------------------------------------
 															Buffers

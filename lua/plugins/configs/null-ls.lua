@@ -10,6 +10,7 @@ local sources = {
   sources = {
     -- Lua
     b.formatting.stylua,
+    -- YAML
   }
 }
 
