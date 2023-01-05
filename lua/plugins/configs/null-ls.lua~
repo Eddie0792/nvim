@@ -1,15 +1,19 @@
-local present, null_ls = pcall(require, 'null-ls')
+local present, null_ls = pcall(require, "null-ls")
 
 if not present then
-  return
+	return
 end
 
-local f = null_ls.builtins.formatting
-local d = null_ls.builtins.diagnostics
-local c = null_ls.builtins.completion
+local b = null_ls.builtins
+
+local sources = {
+	sources = {
+		-- Lua
+		b.formatting.stylua,
+	},
+}
 
 null_ls.setup({
-  sources = {
-    f.stylua,
-  }
+	debug = false,
+	sources = sources,
 })

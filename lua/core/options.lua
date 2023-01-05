@@ -13,6 +13,9 @@ opt.undofile = true
 opt.clipboard = 'unnamedplus'
 opt.mouse = 'a'
 
+-- Blankline stuffs
+vim.opt.list = true
+
 -- Search
 opt.ignorecase = true
 opt.hlsearch = true

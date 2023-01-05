@@ -1,59 +1,67 @@
 --[[----------------------------------------------------------------------------
 																	Plugin Table
 --------------------------------------------------------------------------------
-]]--
+]]
+--
 
 local plugins = {
+	-- Blankline
+	["lukas-reineke/indent-blankline.nvim"] = {
+		config = function()
+			require("plugins.configs.blankline")
+		end,
+	},
+
 	-- Treesitter
 	["nvim-treesitter/nvim-treesitter"] = {
 		module = "nvim-treesitter",
 		setup = function()
-			require("core.lazy_load").on_file_open "nvim-treesitter"
+			require("core.lazy_load").on_file_open("nvim-treesitter")
 		end,
 		cmd = require("core.lazy_load").treesitter_cmds,
 		run = ":TSUpdate",
 		config = function()
-			require "plugins.configs.treesitter"
+			require("plugins.configs.treesitter")
 		end,
 	},
 
 	-- lspzero
-	['VonHeikemen/lsp-zero.nvim'] = {
+	["VonHeikemen/lsp-zero.nvim"] = {
 		requires = {
 			--LSP Support
-			{'neovim/nvim-lspconfig'},
-			{'williamboman/mason.nvim'},
-			{'williamboman/mason-lspconfig.nvim'},
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
 
 			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},
-			{'hrsh7th/cmp-buffer'},
-			{'hrsh7th/cmp-path'},
-			{'saadparwaiz1/cmp_luasnip'},
-			{'hrsh7th/cmp-nvim-lsp'},
-			{'hrsh7th/cmp-nvim-lua'},
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
 
 			-- Snippets
-			{'L3MON4D3/LuaSnip'},
-			{'rafamadriz/friendly-snippets'},
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
 		},
 		config = function()
-			require 'plugins.configs.lspzero'
-		end
+			require("plugins.configs.lspzero")
+		end,
 	},
 
-  ['jose-elias-alvarez/null-ls.nvim'] = {
-    requires = {'nvim-lua/plenary.nvim'},
-    config = function()
-      require('plugins.configs.null-ls')
-    end,
-  },
+	["jose-elias-alvarez/null-ls.nvim"] = {
+		after = "nvim-lspconfig",
+		config = function()
+			require("plugins.configs.null-ls")
+		end,
+	},
 
 	-- Telescope
-	['nvim-telescope/telescope.nvim'] = {
-		cmd = 'Telescope',
+	["nvim-telescope/telescope.nvim"] = {
+		cmd = "Telescope",
 		config = function()
-			require 'plugins.configs.telescope'
+			require("plugins.configs.telescope")
 		end,
 		--setup = function()
 		--	require(core.utils).load_mappings "telescope"
@@ -61,30 +69,30 @@ local plugins = {
 	},
 
 	-- Autopairs
-	['windwp/nvim-autopairs'] = {
+	["windwp/nvim-autopairs"] = {
 		config = function()
-			require('nvim-autopairs').setup {}
-		end
+			require("nvim-autopairs").setup({})
+		end,
 	},
 
-	['nvim-treesitter/playground'] = {},
+	["nvim-treesitter/playground"] = {},
 	-- Impatient
-	['lewis6991/impatient.nvim'] = {},
+	["lewis6991/impatient.nvim"] = {},
 
 	-- Theme
-	['rose-pine/neovim'] = {
-		as = 'rose-pine',
+	["rose-pine/neovim"] = {
+		as = "rose-pine",
 		config = function()
-			color = color or 'rose-pine'
+			color = color or "rose-pine"
 			vim.cmd.colorscheme(color)
-			vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-			vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+			vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 		end,
 	},
 	-- Theme creator
-	['rktjmp/lush.nvim'] = {},
+	["rktjmp/lush.nvim"] = {},
 
-	['folke/lsp-colors.nvim'] = {},
+	["folke/lsp-colors.nvim"] = {},
 }
 --[[--------------------------------------------------------------------------
 													Merge Plugin Function
@@ -94,20 +102,21 @@ local plugins = {
 								& reformats it to match packer syntax.
 
 						merge_plugins() - WORKING AND READY FOR EXPORT
---[[------------------------------------------------------------------------]]--
+--[[------------------------------------------------------------------------]]
+--
 local merge_plugins = function(plugins)
 	local merge_tb = vim.tbl_deep_extend
 	local user_plugins = {
 		-- Packer
-		['wbthomason/packer.nvim'] = {
-			cmd = require('core.lazy_load').packer_cmds, -- gotta fix this later
+		["wbthomason/packer.nvim"] = {
+			cmd = require("core.lazy_load").packer_cmds, -- gotta fix this later
 			config = function()
-				require('plugins')
+				require("plugins")
 			end,
 		},
 		-- Plenary
-		['nvim-lua/plenary.nvim'] = {
-			module = 'plenary'
+		["nvim-lua/plenary.nvim"] = {
+			module = "plenary",
 		},
 	}
 
@@ -126,19 +135,18 @@ local merge_plugins = function(plugins)
 	return final_table
 end
 
-
 -- Load all plugins
-local present, packer = pcall(require, 'packer')
+local present, packer = pcall(require, "packer")
 
 if present then
-	vim.cmd 'packadd packer.nvim'
+	vim.cmd("packadd packer.nvim")
 
 	-- Assemble table for packer syntax
 	plugins = merge_plugins(plugins)
 
 	-- load packer init options
-	local init_options = require('plugins.configs.others').packer_init()
+	local init_options = require("plugins.configs.others").packer_init()
 
 	packer.init(init_options)
-	packer.startup{ plugins }
+	packer.startup({ plugins })
 end
