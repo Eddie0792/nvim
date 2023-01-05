@@ -1,6 +1,6 @@
 --[[----------------------------------------------------------------------------
 																	Plugin Table
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 ]]
 --
 
@@ -10,6 +10,16 @@ local plugins = {
 		config = function()
 			require("plugins.configs.blankline")
 		end,
+	},
+
+	["lewis6991/gitsigns.nvim"] = {
+		ft = "gitcommit",
+    setup = function()
+      require('core.lazy_load').gitsigns()
+		end,
+    config = function()
+      require('plugins.configs.others').gitsigns()
+    end,
 	},
 
 	-- Treesitter
