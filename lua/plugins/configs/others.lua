@@ -19,7 +19,7 @@ M.packer_init = function()
 end
 --------------------------------------------------------------------------------
 M.gitsigns = function()
-	local present, gitsigns = pcall(requrie, "gitsigns")
+	local present, gitsigns = pcall(require, "gitsigns")
 
 	if not present then
 		return

@@ -12,6 +12,7 @@ opt.backup = true
 opt.undofile = true
 opt.clipboard = 'unnamedplus'
 opt.mouse = 'a'
+opt.backupdir = 'C:\\Temp'
 
 -- Disabling netrw while i test nvimtree
 vim.g.loaded_netrw = 1
