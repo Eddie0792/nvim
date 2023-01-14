@@ -2,6 +2,7 @@ local g = vim.g
 local opt = vim.opt
 
 -- System
+opt.confirm = true -- confirm to save changes on exit modified buffer
 opt.scrolloff = 8
 opt.showmode = false
 opt.updatetime = 250 -- Swap file write interval, also used by gitsigns

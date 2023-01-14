@@ -57,7 +57,8 @@ map("n", "sv", [[<C-w>v]])
 															Editing
 --------------------------------------------------------------------------------
 ]]
---
+-- Clear search with <esc>
+map({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsearch' })
 -- Find and replace word under cursor
 map("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 -- Move highlighted lines
