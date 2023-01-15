@@ -8,7 +8,7 @@ return {
     indent = { enable = true },
     context_commentstring = {
       enable = true,
-      enable_autocmd = false
+      enable_autocmd = false,
     },
     ensure_installed = {
       'lua',
@@ -18,7 +18,7 @@ return {
       'query',
       'regex',
       'yaml',
-      'clang',
+      'c',
     },
   },
 }

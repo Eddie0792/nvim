@@ -33,7 +33,7 @@ opt.incsearch = true
                           USER INTERFACE
 --]]
 -- Cursor
-opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+opt.guicursor = 'n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20'
 opt.cursorline = true
 opt.rnu = false
 opt.colorcolumn = '80'
@@ -50,7 +50,7 @@ opt.ruler = false
 
 -- not too sure
 -- End of buffer?
-opt.fillchars = { eob = " " }
+opt.fillchars = { eob = ' ' }
 
 -- Statusline
 opt.laststatus = 3 -- Global statusline

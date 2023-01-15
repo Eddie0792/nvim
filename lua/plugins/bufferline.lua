@@ -1,8 +1,8 @@
 return {
   'akinsho/bufferline.nvim',
   dependencies = 'nvim-tree/nvim-web-devicons',
-  config = function ()
-    require('bufferline').setup({})
+  event = 'BufReadPost',
+  config = function()
+    require('bufferline').setup {}
   end,
-  lazy = false,
 }

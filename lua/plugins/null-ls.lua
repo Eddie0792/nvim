@@ -6,5 +6,4 @@ return {
 			sources = require("null-ls").builtins.formatting.stylua,
 		})
 	end,
-	lazy = false,
 }
