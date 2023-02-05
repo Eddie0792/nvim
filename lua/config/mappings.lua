@@ -11,6 +11,29 @@ map('n', '<leader>fm', function()
 end, opts)
 
 --------------------------------------------------------------------------------
+------------------------------ Terminal ----------------------------------------
+--------------------------------------------------------------------------------
+local nvterm = require('nvterm.terminal').toggle
+local function termcodes(str)
+  return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
+-- Escape terminal mode
+map('t', '<C-x>', termcodes '<C-\\><C-N>')
+
+map('n', '<A-I>', function()
+  nvterm 'float'
+end, opts)
+
+map('t', '<A-I>', function()
+  nvterm 'float'
+end, opts)
+
+map('n', '<A-H>', function()
+  nvterm 'horizontal'
+end, opts)
+
+--------------------------------------------------------------------------------
 ------------------------------ Telescope ---------------------------------------
 --------------------------------------------------------------------------------
 local builtin = require 'telescope.builtin'
@@ -40,7 +63,6 @@ end, opts)
 
 -- Cheatsheet
 map('n', '<leader>?', '<cmd>Cheatsheet<cr>')
-
 
 --------------------------------------------------------------------------------
 ------------------------------ File Explorer -----------------------------------
