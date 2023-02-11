@@ -33,6 +33,18 @@ map('n', '<A-H>', function()
   nvterm 'horizontal'
 end, opts)
 
+map('t', '<A-H>', function()
+  nvterm 'horizontal'
+end, opts)
+
+map('n', '<A-V>', function()
+  nvterm 'vertical'
+end, opts)
+
+map('t', '<A-V>', function()
+  nvterm 'vertical'
+end, opts)
+
 --------------------------------------------------------------------------------
 ------------------------------ Telescope ---------------------------------------
 --------------------------------------------------------------------------------
