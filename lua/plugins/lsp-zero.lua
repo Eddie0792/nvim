@@ -29,6 +29,8 @@ return {
 
     lsp.ensure_installed {
       'lua_ls',
+      'marksman',
+      'spectral',
     }
 
     lsp.nvim_workspace()

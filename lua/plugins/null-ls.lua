@@ -7,9 +7,7 @@ return {
       sources = {
         b.formatting.stylua,
         b.formatting.prettierd,
-        b.formatting.black.with {
-          extra_args = { '-l 80' },
-        },
+        b.formatting.black.with { extra_args = { '-l 80' } },
       },
     }
   end,
