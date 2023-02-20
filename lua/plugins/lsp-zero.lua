@@ -20,13 +20,19 @@ return {
     { 'rafamadriz/friendly-snippets' }, -- Optional
   },
   init = function()
-    local lsp = require('lsp-zero').preset({
+    local lsp = require('lsp-zero').preset {
       name = 'minimal',
       set_lsp_keymaps = true,
       manage_nvim_cmp = true,
       suggest_lsp_serverse = false,
-    })
+    }
+
+    lsp.ensure_installed {
+      'lua_ls',
+    }
+
     lsp.nvim_workspace()
+
     lsp.setup()
-  end
+  end,
 }
