@@ -16,7 +16,7 @@ require("lazy").setup({
   lockfile = vim.fn.stdpath("config") .. "/lua/config/lazy-lock.json",
   defaults = {
     -- lazy = true, -- all plugins lazy-loaded by default
-    version = "*", -- Try latest stable ver (if plugin supports semver)
+    -- version = "*", -- Try latest stable ver (if plugin supports semver)
   },
   checker = {
     enabled = false,
