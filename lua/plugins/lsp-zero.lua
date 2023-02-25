@@ -29,6 +29,7 @@ return {
 
     lsp.ensure_installed {
       'lua_ls',
+      'pyright',
       'marksman',
       'spectral',
     }
