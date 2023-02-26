@@ -31,7 +31,6 @@ return {
       'lua_ls',
       'pyright',
       'marksman',
-      'spectral',
     }
 
     lsp.nvim_workspace()
