@@ -1,0 +1,7 @@
+
+E5108: Error executing lua: ...m-data/lazy/dashboard-nvim/lua/dashboard/theme/hyper.lua:234: attempt to concatenate local 'path' (a nil value)
+stack traceback:
+	...m-data/lazy/dashboard-nvim/lua/dashboard/theme/hyper.lua:234: in function <...m-data/lazy/dashboard-nvim/lua/dashboard/theme/hyper.lua:213>
+E5108: Error executing lua: ...m-data/lazy/dashboard-nvim/lua/dashboard/theme/hyper.lua:234: attempt to concatenate local 'path' (a nil value)
+stack traceback:
+	...m-data/lazy/dashboard-nvim/lua/dashboard/theme/hyper.lua:234: in function <...m-data/lazy/dashboard-nvim/lua/dashboard/theme/hyper.lua:213>
