@@ -4,9 +4,7 @@ local is_unix = has 'unix'
 
 if is_win then
   require 'config.win_opts'
-end
-
-if is_unix then
+else
   require 'config.unix_opts'
 end
 
